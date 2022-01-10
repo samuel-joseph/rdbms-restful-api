@@ -13,8 +13,8 @@ router.get("/find/:id", (req, res) => {
   db.Profile.findAll({
     where: {
       UserId: req.params.id,
-      include: [db.User],
     },
+    include: [db.User],
   }).then((profile) => res.send(profile));
 });
 
